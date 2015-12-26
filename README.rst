@@ -89,7 +89,11 @@ Here is the type signiture expected for solver.
     solve lights switches = []
 
 
+Run unittest against you solution by
 
+::
+
+   stack test
 
 
 
