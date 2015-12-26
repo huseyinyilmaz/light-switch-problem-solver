@@ -7,8 +7,8 @@ test1Light1Switch :: Test
 test1Light1Switch =
   TestCase $ do (assertEqual
                  "Test 1 Digit and 1 "
-                 (solve lights [switch])
-                 ["S"])
+                 ["S"]
+                 (solve lights [switch]))
   where
     lights = ["A"]
     switch = Switch {switchName="S", lights=["A"]}
@@ -17,8 +17,8 @@ test2Lights2Switches :: Test
 test2Lights2Switches =
   TestCase $ do (assertEqual
                  "Test 2 Digit and 2 "
-                 (solve lights switches)
-                 ["S", "T"])
+                 ["S", "T"]
+                 (solve lights switches))
   where
     lights = ["A", "B"]
     switches = [Switch {switchName="S", lights=["A"]},
@@ -28,8 +28,8 @@ test3Lights3Switches :: Test
 test3Lights3Switches =
   TestCase $ do (assertEqual
                  "Test 2 Digit and 2 "
-                 (solve lights switches)
-                 ["S", "T", "V"])
+                 ["S", "T", "V"]
+                 (solve lights switches))
   where
     lights = ["A", "B", "C"]
     switches = [Switch {switchName="S", lights=["A", "B"]},
@@ -41,8 +41,8 @@ test10Lights6Switches :: Test
 test10Lights6Switches =
   TestCase $ do (assertEqual
                  "Test 10 Digit and 10"
-                 (solve lights switches)
-                 ["S", "T", "V", "X", "Y", "Z"])
+                 ["S", "T", "V", "X", "Y", "Z"]
+                 (solve lights switches))
   where
     lights = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]
     switches = [Switch {switchName="S", lights=["1", "3", "7"]},
