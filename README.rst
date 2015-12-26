@@ -73,7 +73,7 @@ Things get little more complicated if we have multiple switches connected to sam
 
 So problem is given the number of switches and lights and specification about how they are connected, find a switch combination that lits all the lights.
 
-Here is the type signiture expected for solver.
+Here is the types for the solver.
 
 ::
 
