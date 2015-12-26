@@ -96,5 +96,12 @@ Run unittest against you solution by
    stack test
 
 
+Lastly here here is a example fucntion call that finds the solution for 1 light and 1 switch
+
+::
+
+   *Main> solve ["A"] [Switch {switchName="S", lights=["A"]}]
+   ["S"]
+
 
 .. _youtube video about battle field 4: https://www.youtube.com/watch?v=JuuzmOXL1bc&feature=youtu.be
