@@ -16,7 +16,9 @@ cabal-version:       >=1.10
 library
   hs-source-dirs:      src
   exposed-modules:     Lib
+                     , Solver
   build-depends:       base >= 4.7 && < 5
+                     , containers
   default-language:    Haskell2010
 
 executable light-switch-problem-solver-exe
@@ -32,6 +34,7 @@ test-suite light-switch-problem-solver-test
   hs-source-dirs:      test
   main-is:             Spec.hs
   build-depends:       base
+                     , HUnit
                      , light-switch-problem-solver
   ghc-options:         -threaded -rtsopts -with-rtsopts=-N
   default-language:    Haskell2010
