@@ -7,51 +7,49 @@ test1Light1Switch :: Test
 test1Light1Switch =
   TestCase $ do (assertEqual
                  "Test 1 Digit and 1 "
-                 ["S"]
-                 (solve lights [switch]))
+                 (Just ["S"])
+                 (solve lights [s]))
   where
     lights = ["A"]
-    switch = Switch {switchName="S", lights=["A"]}
+    s = Switch "S" ["A"]
 
 test2Lights2Switches :: Test
 test2Lights2Switches =
   TestCase $ do (assertEqual
                  "Test 2 Digit and 2 "
-                 ["S", "T"]
+                 (Just ["S", "T"])
                  (solve lights switches))
   where
     lights = ["A", "B"]
-    switches = [Switch {switchName="S", lights=["A"]},
-                Switch {switchName="T", lights=["B"]}]
+    switches = [(Switch "S" ["A"]),
+                (Switch "T" ["B"])]
 
 test3Lights3Switches :: Test
 test3Lights3Switches =
   TestCase $ do (assertEqual
                  "Test 2 Digit and 2 "
-                 ["S", "T", "V"]
+                 (Just ["S", "T", "V"])
                  (solve lights switches))
   where
     lights = ["A", "B", "C"]
-    switches = [Switch {switchName="S", lights=["A", "B"]},
-                Switch {switchName="T", lights=["B"]},
-                Switch {switchName="V", lights=["B", "C"]}]
-
+    switches = [(Switch "S" ["A", "B"]),
+                (Switch "T" ["B"]),
+                (Switch "V" ["B", "C"])]
 
 test10Lights6Switches :: Test
 test10Lights6Switches =
   TestCase $ do (assertEqual
                  "Test 10 Digit and 10"
-                 ["S", "T", "V", "X", "Y", "Z"]
+                 (Just ["S", "T", "V", "X", "Y", "Z"])
                  (solve lights switches))
   where
     lights = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10"]
-    switches = [Switch {switchName="S", lights=["1", "3", "7"]},
-                Switch {switchName="T", lights=["2", "8", "9"]},
-                Switch {switchName="V", lights=["4"]},
-                Switch {switchName="X", lights=["5"]},
-                Switch {switchName="Y", lights=["6"]},
-                Switch {switchName="Z", lights=["10"]}
-               ]
+    switches = [(Switch "S" ["1", "3", "7"]),
+                (Switch "T" ["2", "8", "9"]),
+                (Switch "V" ["4"]),
+                (Switch "X" ["5"]),
+                (Switch "Y" ["6"]),
+                (Switch "Z" ["10"])]
 
 
 main :: IO Counts
