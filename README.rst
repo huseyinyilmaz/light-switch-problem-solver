@@ -82,11 +82,10 @@ Here is the types for the solver.
     type LightName = String
     type SwitchName = String
 
-    data Light = Light {lightName::LightName, isOn::Bool}
-    data Switch = Switch {switchName::SwitchName, lights::[LightName]}
+    data Switch = Switch SwitchName [LightName] deriving (Show, Eq)
 
-    solve :: [LightName] -> [Switch] -> [SwitchName]
-    solve lights switches = []
+    solve :: [LightName] -> [Switch] -> Maybe [SwitchName]
+    solve _lns _ss = Nothing
 
 
 Run unittest against you solution by
@@ -101,7 +100,7 @@ Lastly here here is a example fucntion call that finds the solution for 1 light 
 ::
 
    *Main> solve ["A"] [Switch {switchName="S", lights=["A"]}]
-   ["S"]
+   Just ["S"]
 
 
 .. _youtube video about battle field 4: https://www.youtube.com/watch?v=JuuzmOXL1bc&feature=youtu.be
